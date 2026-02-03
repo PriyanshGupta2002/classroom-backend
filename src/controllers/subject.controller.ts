@@ -26,7 +26,6 @@ export const getAllSubjects = async (req: Request, res: Response) => {
       const condition = ilike(departments.name, `%${department}%`);
       filterConditions.push(condition);
     }
-
     const whereClause =
       filterConditions.length > 0 ? and(...filterConditions) : undefined;
     const countResult = await db
