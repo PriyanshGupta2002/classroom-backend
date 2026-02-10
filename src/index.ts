@@ -1,6 +1,7 @@
 import express from "express";
 import subjectRouter from "./routes/subject.route";
 import cors from "cors";
+import departmentRouter from "./routes/department.route";
 const app = express();
 const PORT = 8000;
 
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/subjects", subjectRouter);
+app.use("/api/departments", departmentRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

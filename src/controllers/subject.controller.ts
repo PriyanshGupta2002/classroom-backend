@@ -23,8 +23,8 @@ export const getAllSubjects = async (req: Request, res: Response) => {
       filterConditions.push(condition);
     }
     if (department) {
-      const condition = ilike(departments.name, `%${department}%`);
-      filterConditions.push(condition);
+      const deptPattern = `%${String(department).replace(/[%_]/g, "\\$&")}%`;
+      filterConditions.push(ilike(departments.code, deptPattern));
     }
     const whereClause =
       filterConditions.length > 0 ? and(...filterConditions) : undefined;
