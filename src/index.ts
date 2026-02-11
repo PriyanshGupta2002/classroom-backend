@@ -1,3 +1,7 @@
+import AgentAPI from "apminsight";
+
+AgentAPI.config();
+
 import express from "express";
 import subjectRouter from "./routes/subject.route";
 import cors from "cors";
