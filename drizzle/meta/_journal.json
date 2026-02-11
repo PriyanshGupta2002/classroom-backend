@@ -15,6 +15,20 @@
       "when": 1770728884595,
       "tag": "0001_jazzy_adam_destine",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1770729863412,
+      "tag": "0002_secret_mephistopheles",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1770729901972,
+      "tag": "0003_flat_marauders",
+      "breakpoints": true
     }
   ]
 }

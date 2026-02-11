@@ -2,6 +2,7 @@ import express from "express";
 import subjectRouter from "./routes/subject.route";
 import cors from "cors";
 import departmentRouter from "./routes/department.route";
+import { securityMiddleware } from "./middleware/arcjetMiddleware";
 const app = express();
 const PORT = 8000;
 
@@ -16,6 +17,8 @@ app.use(
     credentials: true,
   }),
 );
+
+app.use(securityMiddleware);
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello from the classroom backend!" });

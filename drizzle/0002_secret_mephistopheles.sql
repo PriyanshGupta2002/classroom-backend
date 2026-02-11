@@ -1,0 +1,1 @@
+ALTER TABLE "enrollments" DROP CONSTRAINT "enrollments_student_id_class_id_unique";
