@@ -60,7 +60,7 @@ export const securityMiddleware = async (
       });
     }
     if (decision.isDenied() && decision.reason.isShield()) {
-      return res.status(403).json({
+      return res.status(429).json({
         error: "Forbidden",
         message: "Request blocked by security policy",
       });
