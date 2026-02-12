@@ -3,12 +3,14 @@ import AgentAPI from "apminsight";
 AgentAPI.config();
 
 import express from "express";
-import subjectRouter from "./routes/subject.route";
+import subjectRouter from "./routes/subject.route.js";
+import classesRouter from "./routes/classes.route.js";
 import cors from "cors";
 import { toNodeHandler } from "better-auth/node";
-import departmentRouter from "./routes/department.route";
-import { securityMiddleware } from "./middleware/arcjetMiddleware";
-import { auth } from "./lib/auth";
+import departmentRouter from "./routes/department.route.js";
+import usersRouter from "./routes/users.route.js";
+import { securityMiddleware } from "./middleware/arcjetMiddleware.js";
+import { auth } from "./lib/auth.js";
 const app = express();
 const PORT = 8000;
 
@@ -33,6 +35,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/subjects", subjectRouter);
 app.use("/api/departments", departmentRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/classes", classesRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
