@@ -1,10 +1,11 @@
 import Router from "express";
-import { getDepartments } from "../controllers/department.controller";
+import { enrollStudent } from "../controllers/enrollments.controller";
 import { requireAuth } from "../middleware/requireAuth";
+
 const router = Router();
 
 router.use(requireAuth);
 
-router.route("/").get(getDepartments);
+router.route("/").post(enrollStudent);
 
 export default router;
